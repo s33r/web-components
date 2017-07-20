@@ -4,22 +4,20 @@
             color: blue;
         }
     </style>
-
-    <h1>Component Test</h1>
+    <header>
+        <h1>Website Title</h1>
+    </header>
 </template>
 
 
 <script>
-
-    window.customElements.define('test-component', class extends ComponentBase {
+    window.customElements.define('aaron-header', class extends ComponentBase {
         constructor() {
             super();
 
-            const currentDocument = this.findDocument('test-component');
+            const currentDocument = this.findDocument('aaron-header');
 
             this.createDom(currentDocument);
         }
     });
-
-
 </script>

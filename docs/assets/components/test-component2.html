@@ -1,16 +1,20 @@
-<template id="style">
-    div {
-        border: solid thin black;
-        padding: 20px;
-    }
-    h1 {
-        color: red;
-        font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
-        border-bottom: solid thin black;
-    }
-</template>
+<link rel="import" href="./test-component.html" >
 
-<template id="template">
+<template>
+
+
+    <style>
+        div {
+            border: solid thin black;
+            padding: 20px;
+        }
+        h1 {
+            color: red;
+            font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+            border-bottom: solid thin black;
+        }
+    </style>
+
     <div>
         <h1>Component Test 2</h1>
         <test-component></test-component>
@@ -21,35 +25,13 @@
 
 
 <script>
-    window.customElements.define('test-component-2', class extends HTMLElement {
+    window.customElements.define('test-component-2', class extends ComponentBase {
         constructor() {
             super();
 
+            const currentDocument = this.findDocument('test-component2');
 
-            console.dir(document);
-
-            const currentDocument = Array.from(document.querySelectorAll('link'))
-                .filter((link) => link.href.includes('test-component2'))[0].import;
-
-            console.log(currentDocument);
-
-            this.createDom('test-component-2', currentDocument);
-        }
-
-        createDom(name, document) {
-            const template = document.getElementById(`template`);
-            const style = document.getElementById(`style`);
-
-            const shadowRoot = this.attachShadow({mode: 'open'});
-
-            const styleElement = document.createElement('style');
-            styleElement.appendChild(style.content.cloneNode(true));
-
-
-            shadowRoot.appendChild(styleElement);
-            shadowRoot.appendChild(template.content.cloneNode(true));
-
-            console.log(name);
+            this.createDom(currentDocument);
         }
     });
 

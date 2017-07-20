@@ -4,40 +4,23 @@
     <meta charset="UTF-8">
     <title>Web Components Test</title>
 
+    <link rel="stylesheet" href="assets/styles/index.css">
+
     <!--<script src="./assets/scripts/index.js" type="module"></script>-->
-    <script defer src="./assets/scripts/test-shadow-dom/test-shadow-dom.js"></script>
-    <script defer src="./assets/scripts/test-shadow-dom-slot/test-shadow-dom-slot.js"></script>
-
-    <link rel="import" href="./assets/components/test-component.html" >
-    <link rel="import" href="./assets/components/test-component2.html" >
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-
-            box-sizing: border-box;
-        }
-
-        h1 {
-            margin: 0;
-            border-bottom: solid thin black;
+    <script src="./assets/scripts/ComponentBase.js"></script>
+    <script src="./assets/scripts/test-shadow-dom/test-shadow-dom.js"></script>
+    <script src="./assets/scripts/test-shadow-dom-slot/test-shadow-dom-slot.js"></script>
 
 
-            padding: 4px 10px;
-        }
-
-        .test-container {
-            padding: 0 16px;
-        }
-    </style>
 </head>
 <body>
+<link rel="import" href="./assets/components/test-component.html" >
+<link rel="import" href="./assets/components/test-component2.html" >
+
 <h1>Web Components Test Page</h1>
 
 <div class="test-container">
+    <p>More realistic <a href="page.html">page</a>.</p>
 
     <test-shadow-dom></test-shadow-dom>
 

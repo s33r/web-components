@@ -1,0 +1,29 @@
+
+
+<template>
+    <style>
+        p {
+            text-align: center;
+        }
+    </style>
+
+    <footer>
+        <p>Footer text</p>
+    </footer>
+</template>
+
+
+<script>
+
+    window.customElements.define('aaron-footer', class extends ComponentBase {
+        constructor() {
+            super();
+
+            const currentDocument = this.findDocument('aaron-footer');
+
+            this.createDom(currentDocument);
+        }
+    });
+
+
+</script>

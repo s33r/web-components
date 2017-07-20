@@ -1,0 +1,24 @@
+<template>
+    <style>
+        main {
+            padding: 0px 8px;
+        }
+    </style>
+
+    <main>
+        <slot></slot>
+    </main>
+</template>
+
+
+<script>
+    window.customElements.define('aaron-main', class extends ComponentBase {
+        constructor() {
+            super();
+
+            const currentDocument = this.findDocument('aaron-main');
+
+            this.createDom(currentDocument);
+        }
+    });
+</script>
