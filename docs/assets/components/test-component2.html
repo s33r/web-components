@@ -1,11 +1,22 @@
 <template id="style">
+    div {
+        border: solid thin black;
+        padding: 20px;
+    }
     h1 {
-    color: red;
+        color: red;
+        font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+        border-bottom: solid thin black;
     }
 </template>
 
 <template id="template">
-    <h1>Component Test 2</h1>
+    <div>
+        <h1>Component Test 2</h1>
+        <test-component></test-component>
+        <slot></slot>
+    </div>
+
 </template>
 
 
