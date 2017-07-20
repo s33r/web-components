@@ -1,0 +1,47 @@
+<template id="style">
+    h1 {
+    color: red;
+    }
+</template>
+
+<template id="template">
+    <h1>Component Test 2</h1>
+</template>
+
+
+<script>
+
+    window.customElements.define('test-component-2', class extends HTMLElement {
+        constructor() {
+            super();
+
+
+            console.dir(document);
+
+            const currentDocument = Array.from(document.querySelectorAll('link'))
+                .filter((link) => link.href.includes('test-component2'))[0].import;
+
+            console.log(currentDocument);
+
+            this.createDom('test-component-2', currentDocument);
+        }
+
+        createDom(name, document) {
+            const template = document.getElementById(`template`);
+            const style = document.getElementById(`style`);
+
+            const shadowRoot = this.attachShadow({mode: 'open'});
+
+            const styleElement = document.createElement('style');
+            styleElement.appendChild(style.content.cloneNode(true));
+
+
+            shadowRoot.appendChild(styleElement);
+            shadowRoot.appendChild(template.content.cloneNode(true));
+
+            console.log(name);
+        }
+    });
+
+
+</script>

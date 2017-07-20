@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Components Test</title>
+
+    <!--<script src="./assets/scripts/index.js" type="module"></script>-->
+    <script defer src="./assets/scripts/test-shadow-dom/test-shadow-dom.js"></script>
+    <script defer src="./assets/scripts/test-shadow-dom-slot/test-shadow-dom-slot.js"></script>
+
+    <link rel="import" href="./assets/components/test-component.html" >
+    <link rel="import" href="./assets/components/test-component2.html" >
+
+
+</head>
+<body>
+<h1>Normal Header</h1>
+
+<test-shadow-dom></test-shadow-dom>
+
+<test-shadow-dom-slot>
+    <test-shadow-dom></test-shadow-dom>
+</test-shadow-dom-slot>
+
+
+<test-component></test-component>
+<test-component-2></test-component-2>
+</body>
+</html>
